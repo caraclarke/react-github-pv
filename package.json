@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "React Github Profile View",
   "main": "main.js",
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^6.7.2",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "webpack": "1.12.*"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js"
   },
