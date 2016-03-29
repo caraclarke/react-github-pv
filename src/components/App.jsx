@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 class App extends Component{
   
   constructor(props) {
-    suoer(props);
+    super(props);
     this.state = { // initial state
       username: 'caraclarke',
       userData: [],
@@ -12,11 +12,32 @@ class App extends Component{
       perPage: 5
     }
   }
+  // get user data from github
+  getUserData() {
+    $.ajax({
+      url: 'https://api.github.com/users/' + this.state.username + '?client_id=' + this.props.clientId + '&client_secret=' + this.props.clientSecret,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        console.log(data);
+      }.bind(this),
+      error: function(xhr, status, error) {
+        console.log('error: ' + error, 'status: ' + status);
+      }.bind(this)
+    });
+  }
+  
+  componentDidMount() {
+    this.getUserData();
+  }
+  
   // this.state main component
   // this.props nested components
   render () {
     return (
-      {this.state.username}
+      <div>
+        {this.state.username}
+      </div>
     )
   }
 }
