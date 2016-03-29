@@ -8,7 +8,7 @@ class Repo extends Component{
     
     return (
       <li className="list-group-item">
-        <a href={repo.html_url}>{repo.name}</a> : {repo.description}
+        <a href={repo.html_url} target="_blank">{repo.name}</a> : {repo.description}
       </li>
     )
   }

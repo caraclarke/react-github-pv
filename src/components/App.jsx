@@ -10,7 +10,7 @@ class App extends Component{
       username: 'caraclarke',
       userData: [],
       userRepos: [],
-      perPage: 5
+      perPage: 10
     }
   }
   // get user data from github
