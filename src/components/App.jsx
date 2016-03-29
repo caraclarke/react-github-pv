@@ -45,6 +45,10 @@ class App extends Component{
     });
   }
   
+  handleFormSubmit(username) {
+    alert(username);
+  }
+  
   componentDidMount() {
     this.getUserData();
     this.getUserRepos();
@@ -56,7 +60,7 @@ class App extends Component{
     
     return (
       <div>
-        <Search />
+        <Search onFormSubmit={this.handleFormSubmit.bind(this)} />
         <Profile {...this.state} />
       </div>
     )
