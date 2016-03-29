@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import Profile from './github/Profile.jsx';
 
 class App extends Component{
   
@@ -19,10 +20,11 @@ class App extends Component{
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log(data);
+        this.setState({ userData: data });
       }.bind(this),
       error: function(xhr, status, error) {
-        console.log('error: ' + error, 'status: ' + status);
+        this.setState({ username: null });
+        console.log(error, status);
       }.bind(this)
     });
   }
@@ -36,7 +38,7 @@ class App extends Component{
   render () {
     return (
       <div>
-        {this.state.username}
+        <Profile />
       </div>
     )
   }
