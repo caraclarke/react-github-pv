@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Profile from './github/Profile.jsx';
+import Search from './github/Search.jsx';
 
 class App extends Component{
   
@@ -52,8 +53,10 @@ class App extends Component{
   // this.state main component
   // this.props nested components
   render () {
+    
     return (
       <div>
+        <Search />
         <Profile {...this.state} />
       </div>
     )
